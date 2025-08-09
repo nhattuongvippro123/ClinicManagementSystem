@@ -1,0 +1,35 @@
+﻿@model ClinicManagementSystem.Models.Appointment
+
+@{
+    ViewData["Title"] = "Tất cả cuộc hẹn";
+}
+
+<h1>Tất cả cuộc hẹn khám</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Ngày/giờ
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ScheduledAt)
+        </dd>
+        <dt class = "col-sm-2">
+            Tên bệnh nhân
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Patient.FullName)
+        </dd>
+        <dt class = "col-sm-2">
+            Lý do
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Reason)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.AppointmentId">Chỉnh sửa cuộc hẹn</a> |
+    <a asp-action="Index">Trở lại danh sách</a>
+</div>

@@ -1,0 +1,60 @@
+﻿@model IEnumerable<ClinicManagementSystem.Models.Appointment>
+@{
+    ViewData["Title"] = "Index";
+} 
+<link rel="stylesheet" href="~/css/appointment-styles.css" />
+
+<div class="container">
+
+    <h1 class="page-title">Lịch Khám</h1>
+    
+    <p>
+        <a class="btn btn-success btn-create" asp-action="Create">
+            <span class="medical-icon">➕</span> Tạo mới lịch khám
+        </a>
+    </p>
+
+    <div class="table-responsive">
+        @if (Model != null && Model.Any())
+        {
+            <table class="table table-hover appointment-table">
+                <thead class="table-header">
+                    <tr>
+                        <th>Ngày/giờ hẹn</th>
+                        <th>Bệnh nhân</th>
+                        <th>Lý do khám</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach (var item in Model) {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.ScheduledAt)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Patient.FullName)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Reason)</td>
+                        <td>
+                            <a class="btn btn-sm btn-primary" asp-action="Edit" asp-route-id="@item.AppointmentId">
+                                <span></span> Sửa
+                            </a>
+                            <a class="btn btn-sm btn-info text-white" asp-action="Details" asp-route-id="@item.AppointmentId">
+                                <span></span> Xem
+                            </a>
+                            <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.AppointmentId">
+                                <span></span> Xóa
+                            </a>
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <div class="empty-state">
+                <div class="empty-state-icon"></div>
+                <h3>Chưa có lịch khám nào</h3>
+                <p>Nhấn vào nút "Tạo mới lịch khám" để thêm lịch khám đầu tiên.</p>
+            </div>
+        }
+    </div>
+</div>

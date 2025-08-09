@@ -1,0 +1,155 @@
+﻿@{
+    ViewData["Title"] = "Chính sách bảo mật";
+}
+<link rel="stylesheet" href="~/css/Privacy.css" />
+
+<div class="privacy-container">
+    <div class="privacy-header">
+        <h1 class="privacy-title">
+            <i class="medical-icon"></i>
+            @ViewData["Title"]
+        </h1>
+        <p class="privacy-subtitle">Hệ thống quản lý phòng khám</p>
+    </div>
+
+    <div class="privacy-content">
+        <div class="policy-section">
+            <h2 class="section-title">
+                1. Giới thiệu
+            </h2>
+            <p class="section-content">
+                Chúng tôi cam kết bảo vệ quyền riêng tư và thông tin cá nhân của bệnh nhân, bác sĩ và nhân viên y tế 
+                sử dụng hệ thống quản lý phòng khám của chúng tôi. Chính sách này mô tả cách chúng tôi thu thập, 
+                sử dụng, lưu trữ và bảo vệ thông tin của bạn.
+            </p>
+        </div>
+
+        <div class="policy-section">
+            <h2 class="section-title">
+                2. Thông tin chúng tôi thu thập
+            </h2>
+            <div class="section-content">
+                <h3 class="subsection-title">Thông tin bệnh nhân:</h3>
+                <ul class="policy-list">
+                    <li>Thông tin cá nhân: Họ tên, ngày sinh, giới tính, địa chỉ, số điện thoại, email</li>
+                    <li>Thông tin y tế: Lịch sử bệnh án, kết quả xét nghiệm, đơn thuốc, chẩn đoán</li>
+                    <li>Thông tin bảo hiểm: Số thẻ bảo hiểm y tế, thông tin thanh toán</li>
+                </ul>
+                
+                <h3 class="subsection-title">Thông tin nhân viên y tế:</h3>
+                <ul class="policy-list">
+                    <li>Thông tin cá nhân và chuyên môn</li>
+                    <li>Lịch làm việc và ca trực</li>
+                    <li>Thông tin đăng nhập hệ thống</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="policy-section">
+            <h2 class="section-title">
+                3. Mục đích sử dụng thông tin
+            </h2>
+            <div class="section-content">
+                <ul class="policy-list">
+                    <li>Quản lý hồ sơ bệnh án và lịch hẹn khám</li>
+                    <li>Cung cấp dịch vụ chăm sóc y tế chất lượng</li>
+                    <li>Thanh toán và xử lý bảo hiểm</li>
+                    <li>Báo cáo thống kê y tế (đã được ẩn danh)</li>
+                    <li>Tuân thủ các quy định pháp luật về y tế</li>
+                    <li>Liên lạc khẩn cấp khi cần thiết</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="policy-section">
+            <h2 class="section-title">
+                4. Bảo mật thông tin
+            </h2>
+            <div class="section-content">
+                <h3 class="subsection-title">Các biện pháp bảo mật:</h3>
+                <ul class="policy-list">
+                    <li>Mã hóa dữ liệu SSL/TLS cho tất cả các giao dịch</li>
+                    <li>Hệ thống xác thực đa yếu tố (2FA)</li>
+                    <li>Kiểm soát truy cập dựa trên vai trò</li>
+                    <li>Sao lưu dữ liệu định kỳ và bảo mật</li>
+                    <li>Giám sát hệ thống 24/7</li>
+                    <li>Đào tạo nhân viên về bảo mật thông tin</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="policy-section">
+            <h2 class="section-title">
+                5. Chia sẻ thông tin
+            </h2>
+            <div class="section-content">
+                <p>Chúng tôi chỉ chia sẻ thông tin của bạn trong các trường hợp sau:</p>
+                <ul class="policy-list">
+                    <li>Với sự đồng ý rõ ràng của bạn</li>
+                    <li>Với các bác sĩ và nhân viên y tế liên quan đến việc điều trị</li>
+                    <li>Với cơ quan bảo hiểm để xử lý thanh toán</li>
+                    <li>Theo yêu cầu của cơ quan pháp luật có thẩm quyền</li>
+                    <li>Trong trường hợp khẩn cấp y tế</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="policy-section">
+            <h2 class="section-title">
+                6. Quyền của bạn
+            </h2>
+            <div class="section-content">
+                <ul class="policy-list">
+                    <li>Quyền truy cập và xem thông tin cá nhân</li>
+                    <li>Quyền yêu cầu chỉnh sửa thông tin không chính xác</li>
+                    <li>Quyền yêu cầu xóa thông tin (trong phạm vi pháp luật cho phép)</li>
+                    <li>Quyền hạn chế xử lý thông tin</li>
+                    <li>Quyền khiếu nại về việc xử lý thông tin</li>
+                    <li>Quyền rút lại sự đồng ý (khi áp dụng)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="policy-section">
+            <h2 class="section-title">
+                7. Thời gian lưu trữ
+            </h2>
+            <div class="section-content">
+                <ul class="policy-list">
+                    <li>Hồ sơ bệnh án: Theo quy định pháp luật (tối thiểu 15 năm)</li>
+                    <li>Thông tin thanh toán: 5 năm</li>
+                    <li>Nhật ký hệ thống: 2 năm</li>
+                    <li>Thông tin liên lạc: Cho đến khi bạn yêu cầu xóa</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="policy-section">
+            <h2 class="section-title">
+                8. Liên hệ
+            </h2>
+            <div class="section-content">
+                <p>Nếu bạn có bất kỳ câu hỏi nào về chính sách bảo mật này, vui lòng liên hệ:</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <strong>Địa chỉ:</strong> K298/32 Hải Phòng, Thanh Khê, TP. Đà Nẵng
+                    </div>
+                    <div class="contact-item">
+                        <strong>Điện thoại:</strong> 0983706404
+                    </div>
+                    <div class="contact-item">
+                        <strong>Email:</strong> tuongdan160399@gmail.com    
+                    </div>
+                    <div class="contact-item">
+                        <strong>Giờ làm việc:</strong> Thứ 2 - Thứ 6: 8:00 - 17:00
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="privacy-footer">
+        <a href="@Url.Action("Index", "Home")" class="btn-back">
+            <i class="medical-icon">←</i>
+            Quay lại trang chủ
+        </a>
+    </div>
+</div>

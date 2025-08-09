@@ -1,0 +1,80 @@
+﻿@{
+    ViewData["Title"] = "Trang chủ";
+}
+
+<div class="container">
+    <h1 class="page-title">Hệ Thống Quản Lý Phòng Khám</h1>
+    
+    <!-- Dashboard Stats -->
+    <div class="dashboard-stats">
+        <div class="stat-card">
+            <div class="stat-icon">👥</div>
+            <div class="stat-number">1,234</div>
+            <div class="stat-label">Bệnh nhân</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">📅</div>
+            <div class="stat-number">56</div>
+            <div class="stat-label">Lịch hẹn hôm nay</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">👨‍⚕️</div>
+            <div class="stat-number">12</div>
+            <div class="stat-label">Bác sĩ</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">📋</div>
+            <div class="stat-number">89</div>
+            <div class="stat-label">Hồ sơ y tế</div>
+        </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-plus-circle"></i> Thao tác nhanh
+                </div>
+                <div class="card-body">
+                    <div class="d-grid gap-3">
+                        <a href="/Appointments/Create" class="btn btn-primary">
+                            <i class="fas fa-calendar-plus"></i> Tạo lịch khám mới
+                        </a>
+                        <a href="/Patients/Create" class="btn btn-success">
+                            <i class="fas fa-user-plus"></i> Thêm bệnh nhân mới
+                        </a>
+                        <a href="/MedicalRecords/Create" class="btn btn-info">
+                            <i class="fas fa-file-medical-alt"></i> Tạo hồ sơ y tế
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-clock"></i> Lịch khám hôm nay
+                </div>
+                <div class="card-body">
+                    <div class="medical-record">
+                        <div class="record-date">08:30 - Nguyễn Văn A</div>
+                        <p class="mb-1">Khám tổng quát</p>
+                        <small class="text-muted">Phòng 101</small>
+                    </div>
+                    <div class="medical-record">
+                        <div class="record-date">10:00 - Trần Thị B</div>
+                        <p class="mb-1">Khám tim mạch</p>
+                        <small class="text-muted">Phòng 102</small>
+                    </div>
+                    <div class="text-center">
+                        <a href="/Appointments" class="btn btn-outline-primary btn-sm">
+                            Xem tất cả lịch khám
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

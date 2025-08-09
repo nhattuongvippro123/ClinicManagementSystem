@@ -1,0 +1,31 @@
+﻿@model ClinicManagementSystem.Models.Appointment
+
+@{
+    ViewData["Title"] = "Chỉnh sửa cuộc hẹn";
+}
+
+<h1>Chỉnh sửa cuộc hẹn</h1>
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="AppointmentId" />
+    <div class="form-group">
+        <label asp-for="ScheduledAt">Ngày/giờ</label>
+        <input asp-for="ScheduledAt" class="form-control" />
+        <span asp-validation-for="ScheduledAt" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="PatientId">Tên bệnh nhân</label>
+        <select asp-for="PatientId" class="form-control" asp-items="ViewBag.PatientId"></select>
+    </div>
+    <div class="form-group">
+        <label asp-for="Reason">Lý do</label>
+        <input asp-for="Reason" class="form-control" />
+        <span asp-validation-for="Reason" class="text-danger"></span>
+    </div>
+    <hr />
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

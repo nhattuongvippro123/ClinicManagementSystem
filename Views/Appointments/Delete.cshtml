@@ -1,0 +1,22 @@
+﻿@model ClinicManagementSystem.Models.Appointment
+@{
+    ViewData["Title"] = "Xóa lịch hẹn";
+}
+<h1>Xóa Lịch hẹn</h1>
+<h3>Có chắc chắn xóa cuộc hẹn này không?</h3>
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">Ngày/giờ</dt>
+        <dd class="col-sm-10">@Model.ScheduledAt</dd>
+        <dt class="col-sm-2">Tên bệnh nhân</dt>
+        <dd class="col-sm-10">@Model.Patient?.FullName</dd>
+        <dt class="col-sm-2">Lý do</dt>
+        <dd class="col-sm-10">@Model.Reason</dd>
+    </dl>
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="AppointmentId" />
+        <button type="submit" class="btn btn-danger">Xóa cuộc hẹn</button>
+        <a asp-action="Index" class="btn btn-secondary">Hủy xóa</a>
+    </form>
+</div>
+

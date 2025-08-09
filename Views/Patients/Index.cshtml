@@ -1,0 +1,100 @@
+﻿@model IEnumerable<ClinicManagementSystem.Models.Patient>
+<link rel="stylesheet" href="~/css/indexPatients.css" />
+
+@{
+    ViewData["Title"] = "Danh sách bệnh nhân";
+}
+
+<div class="container">
+    <form asp-controller="Patients" asp-action="Index" method="get" class="form-inline mb-3">
+        <div class="d-flex flex-wrap align-items-center gap-3">
+            <input type="text" 
+                   name="searchString" 
+                   value="@Context.Request.Query["searchString"]" 
+                   class="form-control" 
+                   placeholder="Tìm tên hoặc SĐT..." 
+                   aria-label="Tìm kiếm bệnh nhân" />
+            <button type="submit" class="btn btn-primary">
+                🔍 Tìm kiếm
+            </button>
+        </div>
+    </form>
+
+    <h1>Danh sách bệnh nhân</h1> 
+    <p>
+        <a asp-action="Create" class="btn-create">
+            Thêm bệnh nhân
+        </a>
+    </p>
+    @if (Model != null && Model.Any())
+    {
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.First().FullName)</th>
+                        <th>@Html.DisplayNameFor(model => model.First().DateOfBirth)</th>
+                        <th>@Html.DisplayNameFor(model => model.First().Gender)</th>
+                        <th>@Html.DisplayNameFor(model => model.First().PhoneNumber)</th>
+                        <th>@Html.DisplayNameFor(model => model.First().Address)</th>
+                        <th>Thao Tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td data-label="Họ tên">@item.FullName</td>
+                            <td data-label="Ngày sinh">@item.DateOfBirth.ToShortDateString()</td>
+                            <td data-label="Giới tính">@item.Gender</td>
+                            <td data-label="Số điện thoại">@item.PhoneNumber</td>
+                            <td data-label="Địa chỉ" title="@item.Address">@item.Address</td>
+                            <td data-label="Thao tác">
+                                <div class="action-buttons">
+                                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn-action btn-edit" title="Chỉnh sửa thông tin bệnh nhân">
+                                        Sửa
+                                    </a>
+                                    <a asp-action="Details" asp-route-id="@item.Id" class="btn-action btn-details" title="Xem chi tiết bệnh nhân">
+                                        Chi tiết
+                                    </a>
+                                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn-action btn-delete" title="Xóa bệnh nhân" 
+                                       >
+                                        Xóa
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <div class="empty-state">
+            <h3>Chưa có bệnh nhân nào</h3>
+            <p>Hiện tại chưa có bệnh nhân nào trong hệ thống.</p>
+            @if (!string.IsNullOrEmpty(Context.Request.Query["searchString"]))
+            {
+                <p>
+                    <strong>Từ khóa tìm kiếm:</strong> "@Context.Request.Query["searchString"]"
+                </p>
+                <a asp-action="Index" class="btn btn-secondary">Xem tất cả bệnh nhân</a>
+            }
+            else
+            {
+                <a asp-action="Create" class="btn-create">
+                    Thêm bệnh nhân đầu tiên
+                </a>
+            }
+        </div>
+    }
+</div>
+
+<div id="loadingOverlay" class="loading-overlay" style="display: none;">
+    <div class="loading-content">
+        <div class="loading-spinner"></div>
+        <span>Đang tải dữ liệu...</span>
+    </div>
+</div>
+
